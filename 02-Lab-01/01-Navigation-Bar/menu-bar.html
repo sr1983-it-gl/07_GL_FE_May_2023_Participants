@@ -41,11 +41,11 @@
     }
 
 
-    #main-menu-item-2 {
+    #main-menu-item-2, #main-menu-item-3 {
       position: relative;
     }
 
-    #sub-menu {
+    #sub-menu, #sub-menu-2 {
       position: absolute;
 
       background-color: lightgray;
@@ -57,7 +57,7 @@
       display: none;
     }
 
-    #main-menu-item-2:hover #sub-menu{
+    #main-menu-item-2:hover #sub-menu, #main-menu-item-3:hover #sub-menu-2{
       display: block;
     }
 
@@ -114,10 +114,31 @@
 
       </li>
 
-      <li>
+      <li id="main-menu-item-3">
         <a href="/link-3">
           Link-3
         </a>
+
+        <ul id="sub-menu-2" class="menu-items">
+          <li>
+            <a href="/dd-link-4">
+              DD-Link-4
+            </a>
+          </li>
+
+          <li>
+            <a href="/dd-link-5">
+              DD-Link-5
+            </a>
+          </li>
+
+          <li>
+            <a href="/dd-link-6">
+              DD-Link-6
+            </a>
+          </li>
+        </ul>
+
       </li>
     </ul>
   </nav>
