@@ -18,7 +18,7 @@
       padding: 15px;
     }
 
-    #bar1{
+    /* #bar1{
 
       background-color: red;
     }
@@ -30,7 +30,7 @@
 
     #bar3{
       background-color: green;
-    }
+    } */
 
     .bar {
       background-color: darkgray;
@@ -42,6 +42,30 @@
       margin: 15px;
     }
 
+    .animated-bar{
+
+      height: 100%;
+      background-color: white;
+    }
+
+    @keyframes animated-bar-1 {
+      
+      0%{
+        height: 100;
+      }
+
+      100%{
+        height: 70%;
+      }
+    }
+
+    #animated-bar-1{
+
+      animation-name: animated-bar-1;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    }
+
   </style>
 </head>
 <body>
@@ -50,6 +74,9 @@
 
     <div id="bar1" class="bar">
 
+      <div id="animated-bar-1" class="animated-bar">
+
+      </div>
     </div>
 
     <div id="bar2" class="bar">
