@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>Array For Loop Demo</h1>
+
+  <button id="array-for-loop-demo">Array - For Loop Demo</button>
+
+  <script>
+
+    const arrayForLoopButton 
+      = document.getElementById("array-for-loop-demo");
+    
+    arrayForLoopButton.addEventListener("click", arrayForLoopDemo);
+
+    function arrayForLoopDemo(){
+
+      console.log("Function called..")
+
+      let colors = new Array();
+      colors.push("Red");
+      colors.push("Blue");
+      colors.push("Green");
+
+      colors.forEach( (color) => {
+
+        console.log(color);
+      })
+
+    }
+  </script>
+
+</body>
+</html>
