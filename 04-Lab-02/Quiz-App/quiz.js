@@ -76,3 +76,6 @@ const answerOptionsQ5 = [answerOptionLanguage, answerOptionProgrammingLanguage, 
 const questionAnswerOptionsPair5 = new QuestionAnswerOptionsPair(
   question5, answerOptionsQ5);
 
+
+// Creation of QuizApplication
+  // Add the property - qaPairArray : QuestionAnswerOptionsPair[]
