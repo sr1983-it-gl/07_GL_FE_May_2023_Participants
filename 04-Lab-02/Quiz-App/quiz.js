@@ -84,6 +84,12 @@ const questionAnswerOptionsPair5 = new QuestionAnswerOptionsPair(
 function QuizApplication(qAOptionsPairArray){
 
   this.qAOptionsPairArray = qAOptionsPairArray;
+
+  /*
+    getScore()
+    incrementScore()
+    calculateSuccessPercentage()
+  */
 }
 
 const qAOptionsPairArray = 
