@@ -127,8 +127,10 @@ function QuizApplication(qAOptionsPairArray){
 
   this.calculateSuccessPercentage = function(){
 
-      return 
-      (this.score / this.qAOptionsPairArray.length) * 100;
+    let percentage = (this.score / this.qAOptionsPairArray.length) * 100
+
+    console.log(percentage);
+    return percentage;
   }
 
   this.isLastQAPair = function(){
@@ -243,9 +245,15 @@ function QuizApplication(qAOptionsPairArray){
     of ${this.qAOptionsPairArray.length}`
   }
 
-  this.displayResultPage = function(){
 
+  this.displayResultPage = function () {
 
+    const finalScoreHtmlFragment =
+        `<h1>Result</h1>
+        <h2 id='score'>Your scores: ${this.getScore()}. Percentage is ${this.calculateSuccessPercentage()}</h2>         
+        `
+    const quizElement = document.getElementById("quiz");
+    quizElement.innerHTML = finalScoreHtmlFragment;
   }
 
   // Create a method for displayQASection
