@@ -114,7 +114,6 @@ function QuizApplication(qAOptionsPairArray){
 
     this.pageIndex = 0;
     this.addListeners();
-
     this.displayQuizPage();
   }
 
@@ -193,6 +192,21 @@ function QuizApplication(qAOptionsPairArray){
 
   this.next = function(){
 
+    if (this.isLastQAPair()){
+
+      this.displayResultPage();
+    }else{
+
+      this.initNextPage();
+    }
+
+  }
+
+  this.initNextPage = function(){
+
+    this.pageIndex ++;
+    this.addListeners();
+    this.displayQuizPage();
   }
 
   this.displayQuizPage = function() {
@@ -222,6 +236,15 @@ function QuizApplication(qAOptionsPairArray){
 
 
   this.displayFooter = function(){
+
+    const progressHtmlElement = document.getElementById("progress");
+  
+    progressHtmlElement.innerHTML = `Question ${this.pageIndex + 1} 
+    of ${this.qAOptionsPairArray.length}`
+  }
+
+  this.displayResultPage = function(){
+
 
   }
 
