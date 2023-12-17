@@ -1,8 +1,8 @@
 
 
-function Question(questionText) {
+function Question(qText) {
 
-    this.questionText = questionText;
+    this.questionText = qText;
 }
 
 const question1 = new Question("JavaScript supports");
@@ -11,9 +11,46 @@ const question3 = new Question("Which is not a JavaScript framework ?")
 const question4 = new Question("Which is used to connect to Database ?")
 const question5 = new Question("JavaScript is a ?");
 
-/*
-const question2 
-const question3
-const question4
-const question5
-*/
+function AnswerOption(answerText){
+
+  this.answerText = answerText;
+}
+
+const answerOptionFunctions = new AnswerOption("Functions");
+const answerOptionXHTML = new AnswerOption("XHTML");
+const answerOptionCSS = new AnswerOption("CSS");
+const answerOptionHTML = new AnswerOption("HTML");
+
+
+function QuestionAnswerOptionsPair(question, answerOptions){
+
+  this.question = question
+  this.answerOptions = answerOptions;
+}
+
+
+const answerOptionsQ1 = [answerOptionFunctions, answerOptionXHTML, answerOptionCSS, answerOptionHTML];
+
+// Question AnswerOptions - 1
+const questionAnswerOptionsPair1 = new QuestionAnswerOptionsPair(
+  question1, answerOptionsQ1);
+
+const answerOptionjQuery = new AnswerOption("JQuery");
+const answerOptionXML = new AnswerOption("XML");
+
+const answerOptionsQ2 = [answerOptionHTML, answerOptionjQuery, answerOptionCSS, answerOptionXML];
+
+// Question AnswerOptions - 2
+const questionAnswerOptionsPair2 = new QuestionAnswerOptionsPair(
+    question2, answerOptionsQ2);
+  
+
+// Question AnswerOptions - 3
+
+
+// Question AnswerOptions - 4
+
+
+// Question AnswerOptions - 5
+
+
