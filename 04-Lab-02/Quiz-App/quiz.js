@@ -114,6 +114,8 @@ function QuizApplication(qAOptionsPairArray){
 
     this.pageIndex = 0;
     this.addListeners();
+
+    this.displayQuizPage();
   }
 
   this.getScore = function() {
@@ -159,6 +161,36 @@ function QuizApplication(qAOptionsPairArray){
     }
   }
 
+  this.displayQuizPage = function() {
+
+    // this.displayHeader();
+    this.displayQASection();
+    this.displayFooter();
+  }
+
+  this.displayQASection = function(){
+
+    const qaOptionsPair = this.qAOptionsPairArray[this.pageIndex]
+
+    const questionHtmlElement = document.getElementById("question");
+    questionHtmlElement.innerHTML = qaOptionsPair.question.questionText;
+  
+    for (let index = 0; index < 4; index ++){
+
+      let answerChoiceButtonId = "choice" + index;
+
+      const answerChoiceHtmlButtonElement = document.getElementById(answerChoiceButtonId);
+
+      answerChoiceHtmlButtonElement.innerHTML = qaOptionsPair.answerOptions[index].answerText;
+    }
+  }
+
+
+
+  this.displayFooter = function(){
+
+  }
+
   // Create a method for displayQASection
   // Get a reference to qaOptions 
 
@@ -170,7 +202,7 @@ function QuizApplication(qAOptionsPairArray){
     // Get a reference to choice0
     // 
 
-    
+
 
   // Create a method like addListeners
   // Get a reference to each of the button [4 button]
