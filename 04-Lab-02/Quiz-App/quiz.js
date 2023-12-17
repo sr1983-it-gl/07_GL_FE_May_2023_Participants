@@ -105,6 +105,17 @@ function QuizApplication(qAOptionsPairArray){
   this.score = 0;
   this.pageIndex = 0;
 
+  this.init = function(){
+
+    this.applicationInit();
+  }
+
+  this.applicationInit = function(){
+
+    this.pageIndex = 0;
+    this.addListeners();
+  }
+
   this.getScore = function() {
     return this.score;
   }
@@ -159,4 +170,6 @@ const qAOptionsPairArray =
   [questionAnswerOptionsPair1, questionAnswerOptionsPair2, questionAnswerOptionsPair3, questionAnswerOptionsPair4, questionAnswerOptionsPair5
 ]
 
-const quizApp = new QuizApplication(qaPairArray);
+const quizApp = new QuizApplication(qAOptionsPairArray);
+
+quizApp.init();
