@@ -79,3 +79,15 @@ const questionAnswerOptionsPair5 = new QuestionAnswerOptionsPair(
 
 // Creation of QuizApplication
   // Add the property - qaPairArray : QuestionAnswerOptionsPair[]
+  // Create an object
+
+function QuizApplication(qAOptionsPairArray){
+
+  this.qAOptionsPairArray = qAOptionsPairArray;
+}
+
+const qAOptionsPairArray = 
+  [questionAnswerOptionsPair1, questionAnswerOptionsPair2, questionAnswerOptionsPair3, questionAnswerOptionsPair4, questionAnswerOptionsPair5
+]
+
+const quizApp = new QuizApplication(qaPairArray);
