@@ -150,12 +150,36 @@ function QuizApplication(qAOptionsPairArray){
       let buttonId = "btn" + index;
       const answerOptionButton = document.getElementById(buttonId);
 
+      // console.log("Before the onclick")
+      // console.log(this);
+
+      let currentQuizAppObject = this;
+
       answerOptionButton.onclick = function(event){
 
         const eventTarget = event.currentTarget;
 
         console.log("Button clicked");
         console.log(eventTarget);
+
+        const userSuppliedAnswer = eventTarget.children[0].innerHTML;
+        console.log(userSuppliedAnswer);
+
+        console.log(this);
+
+        const qaOptionsPair = currentQuizAppObject.qAOptionsPairArray[currentQuizAppObject.pageIndex];
+        
+        const outcome = qaOptionsPair.isCorrectAnswer(userSuppliedAnswer) 
+
+        if (outcome){
+          console.log("Correct Answer");
+
+          currentQuizAppObject.incrementScore();
+        }else{
+          console.log("Incorrect Answer");
+        }
+
+        currentQuizAppObject.next();
 
         // Extract the button text - user-suuplied ansewer
         // correctAnswer(user-answer)
@@ -165,6 +189,10 @@ function QuizApplication(qAOptionsPairArray){
       }
 
     }
+  }
+
+  this.next = function(){
+
   }
 
   this.displayQuizPage = function() {
