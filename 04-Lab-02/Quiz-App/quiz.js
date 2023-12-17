@@ -47,10 +47,32 @@ const questionAnswerOptionsPair2 = new QuestionAnswerOptionsPair(
 
 // Question AnswerOptions - 3
 
+const answerOptionPythonScript = new AnswerOption("Python Script");
+const answerOptionDjango = new AnswerOption("Django");
+const answerOptionNodeJS = new AnswerOption("Node JS");
+
+const answerOptionsQ3 = [answerOptionPythonScript, answerOptionjQuery, answerOptionDjango, answerOptionNodeJS];
+const questionAnswerOptionsPair3 = new QuestionAnswerOptionsPair(
+  question3, answerOptionsQ3);
 
 // Question AnswerOptions - 4
 
+const answerOptionPHP = new AnswerOption("PHP");
+const answerOptionJS = new AnswerOption("JS");
+const answerOptionAll = new AnswerOption("All");
+
+const answerOptionsQ4 = [answerOptionPHP, answerOptionHTML, answerOptionJS, answerOptionAll]
+const questionAnswerOptionsPair4 = new QuestionAnswerOptionsPair(
+  question4, answerOptionsQ4);
 
 // Question AnswerOptions - 5
 
+const answerOptionLanguage = new AnswerOption("Language");
+const answerOptionProgrammingLanguage = new AnswerOption("Programming Language");
+const answerOptionDevelopment = new AnswerOption("Development");
+
+const answerOptionsQ5 = [answerOptionLanguage, answerOptionProgrammingLanguage, answerOptionDevelopment, answerOptionAll]
+
+const questionAnswerOptionsPair5 = new QuestionAnswerOptionsPair(
+  question5, answerOptionsQ5);
 
