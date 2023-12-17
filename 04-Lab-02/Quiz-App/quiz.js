@@ -130,6 +130,23 @@ function QuizApplication(qAOptionsPairArray){
     }
   }
 
+  this.addListeners = function(){
+
+    for (let index = 0; index <= 3; index ++){
+
+      let buttonId = "btn" + index;
+      const answerOptionButton = document.getElementById(buttonId);
+
+      answerOptionButton.onclick = function(event){
+
+        const eventTarget = event.currentTarget;
+
+        console.log("Button clicked");
+        console.log(eventTarget);
+      }
+
+    }
+  }
 
   // Create a method like addListeners
   // Get a reference to each of the button [4 button]
