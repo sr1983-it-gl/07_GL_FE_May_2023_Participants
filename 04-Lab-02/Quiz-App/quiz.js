@@ -85,6 +85,7 @@ function QuizApplication(qAOptionsPairArray){
 
   this.qAOptionsPairArray = qAOptionsPairArray;
   this.score = 0;
+  this.pageIndex = 0;
 
   this.getScore = function() {
     return this.score;
