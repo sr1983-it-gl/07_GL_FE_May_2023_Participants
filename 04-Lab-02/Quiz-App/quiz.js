@@ -130,12 +130,12 @@ function QuizApplication(qAOptionsPairArray){
     }
   }
 
-  /*
-    getScore()
-    incrementScore()
-    calculateSuccessPercentage()
-    isLastQAPair / checkForLastQAPair
-  */
+
+  // Create a method like addListeners
+  // Get a reference to each of the button [4 button]
+  // Run a for loop [btn + index]
+  // add the onclick listener
+  // console.log message
 }
 
 const qAOptionsPairArray = 
