@@ -26,6 +26,10 @@ function QuestionAnswerOptionsPair(question, answerOptions){
 
   this.question = question
   this.answerOptions = answerOptions;
+
+  // Add the support for method isACorrectAnswer()
+  // The user-supplied-answer to be passed as parameter
+  // Define / maintain corrct anser as a property
 }
 
 
