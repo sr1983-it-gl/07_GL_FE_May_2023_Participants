@@ -1,0 +1,9 @@
+    this.displayResultPage = function () {
+
+        const finalScoreHtmlFragment =
+            `<h1>Result</h1>
+            <h2 id='score'>Your scores: ${this.getScore()}. Percentage is ${this.calculateSuccessPercentage()}</h2>         
+            `
+        const quizElement = document.getElementById("quiz");
+        quizElement.innerHTML = finalScoreHtmlFragment;
+    }
