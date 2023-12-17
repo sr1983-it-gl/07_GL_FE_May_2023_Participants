@@ -156,6 +156,12 @@ function QuizApplication(qAOptionsPairArray){
 
         console.log("Button clicked");
         console.log(eventTarget);
+
+        // Extract the button text - user-suuplied ansewer
+        // correctAnswer(user-answer)
+        // if (right-answer)
+            // increment-score
+        // next()
       }
 
     }
