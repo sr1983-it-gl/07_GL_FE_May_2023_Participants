@@ -159,6 +159,19 @@ function QuizApplication(qAOptionsPairArray){
     }
   }
 
+  // Create a method for displayQASection
+  // Get a reference to qaOptions 
+
+    // Use pageIndex
+  // Get refrece to 'question' html object
+    // innerHtml property
+
+  // AnswerChoices
+    // Get a reference to choice0
+    // 
+
+    
+
   // Create a method like addListeners
   // Get a reference to each of the button [4 button]
   // Run a for loop [btn + index]
