@@ -22,10 +22,24 @@ const answerOptionCSS = new AnswerOption("CSS");
 const answerOptionHTML = new AnswerOption("HTML");
 
 
-function QuestionAnswerOptionsPair(question, answerOptions){
+function QuestionAnswerOptionsPair(question, answerOptions, correctAnswer){
 
   this.question = question
   this.answerOptions = answerOptions;
+
+  this.correctAnswer = correctAnswer;
+
+  this.isCorrectAnswer = function(userSuppliedAnswer) {
+
+    if (userSuppliedAnswer == this.correctAnswer.answerText){
+
+      console.log("Correct Answer");
+      return true;
+    }else{
+      console.log("Incorrect Answrt");
+      return false;
+    }
+  }
 
   // Add the support for method isACorrectAnswer()
   // The user-supplied-answer to be passed as parameter
@@ -37,7 +51,7 @@ const answerOptionsQ1 = [answerOptionFunctions, answerOptionXHTML, answerOptionC
 
 // Question AnswerOptions - 1
 const questionAnswerOptionsPair1 = new QuestionAnswerOptionsPair(
-  question1, answerOptionsQ1);
+  question1, answerOptionsQ1, answerOptionFunctions);
 
 const answerOptionjQuery = new AnswerOption("JQuery");
 const answerOptionXML = new AnswerOption("XML");
@@ -46,7 +60,7 @@ const answerOptionsQ2 = [answerOptionHTML, answerOptionjQuery, answerOptionCSS, 
 
 // Question AnswerOptions - 2
 const questionAnswerOptionsPair2 = new QuestionAnswerOptionsPair(
-    question2, answerOptionsQ2);
+    question2, answerOptionsQ2, answerOptionCSS);
   
 
 // Question AnswerOptions - 3
@@ -57,7 +71,7 @@ const answerOptionNodeJS = new AnswerOption("Node JS");
 
 const answerOptionsQ3 = [answerOptionPythonScript, answerOptionjQuery, answerOptionDjango, answerOptionNodeJS];
 const questionAnswerOptionsPair3 = new QuestionAnswerOptionsPair(
-  question3, answerOptionsQ3);
+  question3, answerOptionsQ3, answerOptionPythonScript);
 
 // Question AnswerOptions - 4
 
@@ -67,7 +81,7 @@ const answerOptionAll = new AnswerOption("All");
 
 const answerOptionsQ4 = [answerOptionPHP, answerOptionHTML, answerOptionJS, answerOptionAll]
 const questionAnswerOptionsPair4 = new QuestionAnswerOptionsPair(
-  question4, answerOptionsQ4);
+  question4, answerOptionsQ4, answerOptionPHP);
 
 // Question AnswerOptions - 5
 
@@ -78,7 +92,7 @@ const answerOptionDevelopment = new AnswerOption("Development");
 const answerOptionsQ5 = [answerOptionLanguage, answerOptionProgrammingLanguage, answerOptionDevelopment, answerOptionAll]
 
 const questionAnswerOptionsPair5 = new QuestionAnswerOptionsPair(
-  question5, answerOptionsQ5);
+  question5, answerOptionsQ5, answerOptionProgrammingLanguage);
 
 
 // Creation of QuizApplication
