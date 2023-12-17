@@ -100,6 +100,18 @@ function QuizApplication(qAOptionsPairArray){
       return 
       (this.score / this.qAOptionsPairArray.length) * 100;
   }
+
+  this.isLastQAPair = function(){
+
+    // 0, 1, 2 , 3 [false]
+    // 4 - [true]
+    if (this.pageIndex == (this.qAOptionsPairArray.length - 1)){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   /*
     getScore()
     incrementScore()
