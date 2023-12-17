@@ -104,6 +104,7 @@ function QuizApplication(qAOptionsPairArray){
     getScore()
     incrementScore()
     calculateSuccessPercentage()
+    isLastQAPair / checkForLastQAPair
   */
 }
 
