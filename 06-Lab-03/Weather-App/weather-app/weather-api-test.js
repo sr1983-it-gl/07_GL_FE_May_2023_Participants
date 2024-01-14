@@ -10,4 +10,12 @@ function testBuildURL(){
 
 }
 
-testBuildURL();
+function testInvokeURL(){
+
+  // Call innvokeURL()
+  // ResponseJSON
+  // console.log()
+}
+
+// testBuildURL();
+testInvokeURL();

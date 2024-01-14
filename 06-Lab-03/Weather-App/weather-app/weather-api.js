@@ -30,6 +30,17 @@ class WeatherAPI{
 
   invokeURL(){
 
+    // Option 1 - await / async
+    // Option 2 - then.then / catch
+    
+    // Pass this.weatherAPIURL.toString()
+    // Make use of await
+    // await responseObj.json()
+    // Surrounded with async
+    // fetch()
+
+    // Return the JSON
+
   }
 
 }
