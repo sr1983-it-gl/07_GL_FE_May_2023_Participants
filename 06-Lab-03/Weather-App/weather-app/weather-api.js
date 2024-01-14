@@ -2,6 +2,9 @@
 // Declare a const for APP_ID / APP_KEY
 // Declare a const for BASE_URL
 
+const WEATHER_API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+const API_KEY = "fbc0ee13d4cd0ca7ed7b116299399f34";
+
 class WeatherAPI{
 
   // Accept the locationName
@@ -11,15 +14,16 @@ class WeatherAPI{
 
     // Make use of URL
     // 
-    this.weatherAPIURL = new URL(BASE_URL);
+    this.weatherAPIURL = new URL(WEATHER_API_BASE_URL);
 
     // q
     this.weatherAPIURL.searchParams.append("q", locationName);
 
     // units
+    this.weatherAPIURL.searchParams.append("units", "metric");
 
     // appid 
-
+    this.weatherAPIURL.searchParams.append("appid", API_KEY);
   }
 
   invokeURL(){
