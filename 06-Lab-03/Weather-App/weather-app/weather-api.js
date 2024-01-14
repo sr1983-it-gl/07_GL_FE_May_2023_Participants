@@ -24,6 +24,8 @@ class WeatherAPI{
 
     // appid 
     this.weatherAPIURL.searchParams.append("appid", API_KEY);
+
+    console.log(this.weatherAPIURL.toString());
   }
 
   invokeURL(){
@@ -31,3 +33,5 @@ class WeatherAPI{
   }
 
 }
+
+export {WeatherAPI}
