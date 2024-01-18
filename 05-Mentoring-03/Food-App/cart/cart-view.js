@@ -9,6 +9,10 @@ class CartView {
     this.cartModel = cartModel;
   }
 
+	setMCIntegrationView(mcIntegrationView){
+		this.mcIntegrationView = mcIntegrationView
+	}
+	
   construct(){
 
     this.constructCartTableView();
@@ -48,15 +52,19 @@ class CartView {
 			const quantityElement= document.createElement('td');
 			
 				const decreaseButton = document.createElement('button');
+				decreaseButton.setAttribute('class','decrease-item');
+				decreaseButton.setAttribute('id',`${foodItemId}`);
 				decreaseButton.innerText= '-';
-			
+					
 				const spanElement = document.createElement('span');
 				const quantity = this.cartModel.getQuantity(foodItemId);
 				spanElement.innerText = quantity;
 			
 				const increaseButton = document.createElement('button');
+				increaseButton.setAttribute('class','increase-item');
+				increaseButton.setAttribute('id',`${foodItemId}`);
 				increaseButton.innerText= '+';
-		
+					
 			quantityElement.appendChild(decreaseButton);
 			quantityElement.appendChild(spanElement);
 			quantityElement.appendChild(increaseButton);
@@ -73,8 +81,79 @@ class CartView {
 		  cartItemsTable.appendChild(tableRow);      
 		}    
 
+		this.addEventForDecrementQuantityButtons();
+		this.addEventForIncrementQuantityButtons();
 
   }
+
+
+	addEventForIncrementQuantityButtons(){
+
+		const increaseItemElements = document.querySelectorAll('.increase-item');
+	
+		increaseItemElements.forEach( (increaseItem) =>{
+	
+			increaseItem.param1 = this;
+			increaseItem.addEventListener('click',  (event) => {
+	
+				const target = event.target;
+				const foodItemId = target.getAttribute("id");
+		
+				const cartViewObj = target.param1;
+				cartViewObj.cartModel.add(foodItemId);
+		
+				cartViewObj.constructCartTableView();
+				cartViewObj.constructCartCheckoutView(); 
+		
+			});
+		})
+	}
+	
+	
+	addEventForDecrementQuantityButtons(){
+
+		const decrementItemElements = document.querySelectorAll('.decrease-item');
+	
+		decrementItemElements.forEach( (decrementItem) =>{
+	
+			decrementItem.param1 = this;
+			decrementItem.addEventListener('click',  (event) => {
+	
+
+				const target = event.target;
+				const foodItemId = target.getAttribute("id");
+				
+				const cartViewObj = target.param1;
+				
+				const quantity = cartViewObj.cartModel.getQuantity(foodItemId);
+				const totalItemsInCart = cartViewObj.cartModel.getTotalItems();
+				
+				if (totalItemsInCart == 1 && quantity == 1) {
+				
+						cartViewObj.mcIntegrationView.disableToggleHeart(foodItemId);
+						cartViewObj.cartModel.remove(foodItemId);
+						cartViewObj.mcIntegrationView.updateTotalNoOfItemsText();
+				
+						cartViewObj.mcIntegrationView.displayToggleView();
+				
+				}else {
+				
+						if (quantity == 1){    
+								cartViewObj.mcIntegrationView.disableToggleHeart(foodItemId);
+						}
+						
+						cartViewObj.cartModel.remove(foodItemId);
+				
+						cartViewObj.mcIntegrationView.updateTotalNoOfItemsText();
+				
+						cartViewObj.constructCartTableView();
+						cartViewObj.constructCartCheckoutView(); 
+					}   
+				
+			});
+		})
+	}
+	
 
   constructCartCheckoutView(){
 

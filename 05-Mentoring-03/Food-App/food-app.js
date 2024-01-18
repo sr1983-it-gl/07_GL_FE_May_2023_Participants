@@ -14,3 +14,5 @@ cartController.init();
 
 const mcIntegrationController = new MCIntegrationController(cartController);
 mcIntegrationController.init();
+
+cartController.cartView.setMCIntegrationView(mcIntegrationController.mcIntegrationView);

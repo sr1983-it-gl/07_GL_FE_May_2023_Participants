@@ -31,6 +31,13 @@ class MCIntegrationView {
 		noOfItemsElement.innerText = `${totalItems} Items`;
 	}
 	
+	disableToggleHeart(foodItemId){
+
+    const foodItemObj = document.getElementById(foodItemId);
+    foodItemObj.classList.remove("toggle-heart");          
+	}
+
+
 }
 
 export {MCIntegrationView}

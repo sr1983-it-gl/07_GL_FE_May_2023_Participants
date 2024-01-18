@@ -43,9 +43,9 @@ class MCIntegrationController {
 			item.addEventListener("click", (event) => {
 
 				const target = event.target;
-        
 				const foodItemId = target.getAttribute("id");
-				
+
+
 				if (!this.cartController.cartModel.isItemPresent(foodItemId)){
 						this.mcIntegrationView.enableToggleHeart(foodItemId);
 				}else{
@@ -56,7 +56,10 @@ class MCIntegrationController {
 				this.mcIntegrationView.updateTotalNoOfItemsText();    
 
 				this.cartController.cartView.construct();
-		})
+
+
+			
+		}) 
 		})
 
 	}
