@@ -2,6 +2,7 @@
 import {FoodItemUtils} from "../food-item/food-item-utils.js"
 
 import {FoodItemView} from "../food-item/view/food-item-view.js"
+import {FoodCategoryView} from "../food-category/view/food-category-view.js";
 
 class MainPanelView {
 
@@ -12,7 +13,7 @@ class MainPanelView {
 
   construct(){
 
-
+    // Food-Item
     this.foodCategories.forEach ( (foodCategoryObj) => {
 
       const foodItems = FoodItemUtils.getFoodItems(foodCategoryObj);
@@ -30,6 +31,19 @@ class MainPanelView {
 
     })
 
+    // Food-Category
+    this.foodCategories.forEach((foodCategory) => {
+
+
+      const foodCategoryView = new FoodCategoryView(foodCategory);
+      const foodCategoryHtmlFragment = foodCategoryView.construct();
+
+      const categoryListHtmlElement 
+        = document.getElementById("category-list");
+
+      categoryListHtmlElement.appendChild(foodCategoryHtmlFragment);
+    })
+  
   }
 
 }

@@ -21,6 +21,33 @@ class FoodItemUtils {
 
   }
 
+  static getFoodItem(foodItemId){
+
+    const foodItemDataObj = FOOD_ITEMS_DATA_ARRAY.find( (foodItemData) => {
+
+      if (foodItemData.id == foodItemId){
+        return foodItemData;
+      }
+    })
+
+    const foodItemObj = FoodItemUtils.convert(foodItemDataObj);
+    return foodItemObj;
+  }
+
+
+  static getImagePath(foodItemId){
+
+    const foodItemDataObj = FOOD_ITEMS_DATA_ARRAY.find( (foodItemData) => {
+
+      if (foodItemData.id == foodItemId){
+        return foodItemData;
+      }
+    })
+
+    return foodItemDataObj.img;
+  }
+
+
   static convert(foodItemData){
 
         // TODO
