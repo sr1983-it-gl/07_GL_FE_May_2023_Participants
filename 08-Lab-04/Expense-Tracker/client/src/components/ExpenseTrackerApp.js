@@ -38,7 +38,7 @@ const ExpenseTrackerApp = () => {
 
       <h2>Expense Items</h2>
 
-      <ExpenseCreator ></ExpenseCreator>
+      <ExpenseCreator expenseItems={expenseItems} ></ExpenseCreator>
 
       <hr/>
 
