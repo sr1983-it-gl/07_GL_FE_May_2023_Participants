@@ -1,6 +1,23 @@
 
+import {useEffect} from "react"
+
+import {getAllExpenseItems} from "../services/expense"
 
 const ExpenseTrackerApp = () => {
+
+  useEffect( () => {
+
+      const getAllExpenseItemsInvoker = async () => {
+
+        const response = await getAllExpenseItems();
+        console.log("Expense Items");
+        console.log(JSON.stringify(response))
+
+      }
+
+      getAllExpenseItemsInvoker();
+
+  }, [])
 
   // Write down the useEffect hook
   // Write a new method within the useEffect
